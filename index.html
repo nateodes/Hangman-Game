@@ -8,12 +8,14 @@
 
 	<!-- Optional theme -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<link rel= "stylesheet" type= "text/css" href="assets/css/style.css" > 
 	
 
 </head>
 
 <body>
-	<div class= "container">
+	<div class= "container-fluid">
 		<div class= "row">
 			<div class= "col-lg-9 col-md-9 col-sm-10 col-xs-12">
 				<h1> HANGMAN GAME!! </h1>
@@ -21,135 +23,60 @@
 
 		<div class= "row">
 			<div class= "col-lg-6 col-md-6 col-sm-9 col-xs-12">
-				<p>PRESS ANY KEY TO GET STARTED</p>
+				<p class= "btn btn-primary" id= "start">PRESS BUTTON TO GET STARTED</p>
 				<br>
-				<p><span id="wins"> Wins </span></p>
+				
 				<br>
 				<p><span id="currentWord"> </span></p>
 					<div id="wordWrap">
-						<div id="underline1">
-							<div id="letter1"></div>
-						</div>
-						<div id="underline2">
-							<div id="letter2"></div>
-						</div>
-						<div id="underline3">
-							<div id="letter3"></div>
-						</div>
-						<div id="underline4">
-							<div id="letter4"></div>
-						</div>
-						<div id="underline5">
-							<div id="letter5"></div>
-						</div>
-						<div id="underline6">
-							<div id="letter6"></div>
-						</div>
-						<div id="underline7">
-							<div id="letter7"></div>
-						</div>
-						<div id="underline8">
-							<div id="letter8"></div>
-						</div>
-						<div id="underline9">
-							<div id="letter9"></div>
-						</div>
-						<div id="underline10">
-							<div id="letter10"></div>
-						</div>
-						<div id="underline11">
-							<div id="letter11"></div>
-						</div>
-						<div id="underline12">
-							<div id="letter12"></div>
-						</div>
-						<div id="underline13">
-							<div id="letter13"></div>
-						</div>
-						<div id="underline14">
-							<div id="letter14"></div>
-						</div>
-						<div id="underline15">
-							<div id="letter15"></div>
-						</div>
-						<div id="underline16">
-							<div id="letter16"></div>
-						</div>
-						<div id="underline17">
-							<div id="letter17"></div>
-						</div>
-						<div id="underline18">
-							<div id="letter18"></div>
-						</div>
-						<div id="underline19">
-							<div id="letter19"></div>
-						</div>
-						<div id="underline20">
-							<div id="letter20"></div>
-						</div>
-						<div id="underline21">
-							<div id="letter21"></div>
-						</div>
-						<div id="underline22">
-							<div id="letter22"></div>
-						</div>
-						<div id="underline23">
-							<div id="letter23"></div>
-						</div>
-						<div id="underline24">
-							<div id="letter24"></div>
-						</div>
-						<div id="underline25">
-							<div id="letter25"></div>
-						</div>
-						<div id="underline26">
-							<div id="letter26"></div>
-						</div>
-						<div id="underline27">
-							<div id="letter27"></div>
-						</div>
-						<div id="underline28">
-							<div id="letter28"></div>
-						</div>
-						<div id="underline29">
-							<div id="letter29"></div>
-						</div>
-						<div id="underline30">
-							<div id="letter30"></div>
-						</div>
-						<div id="underline31">
-							<div id="letter31"></div>
-						</div>
-						<div id="underline32">
-							<div id="letter32"></div>
-						</div>
-						<div id="underline33">
-							<div id="letter33"></div>
-						</div>
-						<div id="underline34">
-							<div id="letter34"></div>
-						</div>
-						<div id="underline35">
-							<div id="letter35"></div>
-						</div>
-
-
-
+						
 					</div>
-
-
-				<br>
-				<br>
-				<p> Number of guesses remaining</p>
-				<br>
-				<p><span id="guesses"> </span></p>
+			</div>
+		</div>
 				<br>
 				<br>
 				<p> Letters already guessed</p>
 				<br>
+				<p><span id="guesses"> </span></p>
+				<br>
+				<br>
+				
+			<div class= "row" id = "letters">
+				<div class= "col-lg-6 col-md-6 col-xs-12">
+				<p id = "letterA">A</p>
+				<p id = "letterB">B</p>
+				<p id = "letterC">C</p>
+				<p id = "letterD">D</p>
+				<p id = "letterE">E</p>
+				<p id = "letterF">F</p>
+				<p id = "letterG">G</p>
+				<p id = "letterH">H</p>
+				<p id = "letterI">I</p>
+				<p id = "letterJ">J</p>
+				<p id = "letterK">K</p>
+				<p id = "letterL">L</p>
+				<p id = "letterM">M</p>
+				<p id = "letterN">N</p>
+				<p id = "letterO">O</p>
+				<p id = "letterP">P</p>
+				<p id = "letterQ">Q</p>
+				<p id = "letterR">R</p>
+				<p id = "letterS">S</p>
+				<p id = "letterT">T</p>
+				<p id = "letterU">U</p>
+				<p id = "letterV">V</p>
+				<p id = "letterW">W</p>
+				<p id = "letterX">X</p>
+				<p id = "letterY">Y</p>
+				<p id = "letterZ">Z</p>
+				</div>
+			</div>	
+				
+
 				<p><span id="guessed"> </span></p>
-			</div>
-		</div>		
+
+			<footer class= "panel-footer">  Games by Nate </footer>	
+	</div>			
 
 
 

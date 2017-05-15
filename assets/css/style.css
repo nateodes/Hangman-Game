@@ -1,0 +1,22 @@
+#letters {
+	display: inline-block;
+	font-size: 2.0rem;
+	font-weight: 600;
+}
+
+.row {
+	background-color: grey;
+}
+
+p {
+	color: black;
+	display: inline-block;
+	margin: 5px;
+}
+
+footer {
+	color: black;
+	border: 5px solid silver;
+	
+	padding: 50px;
+}

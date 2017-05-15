@@ -16,12 +16,35 @@ function puzzle () {
 	
 }
 
-document.onkeyup = function(word) {
+document.getElementById("start").addEventListener("click", function(word) {
 	var computerGuess = currentWord[Math.floor(Math.random() * currentWord.length)];
 	document.getElementById("wordWrap").innerHTML = computerGuess;
 	//document.querySelector("#wordWrap").style.letterSpacing = 3px; 
-	console.log("word appears!");
+	console.log("word is here!");
 } 
+ );
+
+document.getElementById("start").addEventListener("click", function(hide){
+			document.getElementById("wordWrap").style.visibility = "hidden";
+
+
+			console.log("word is hidden!")
+}
+
+
+	
+	);
+
+
+
+
+
+//document.onkeyup = function(word) {
+	//var computerGuess = currentWord[Math.floor(Math.random() * currentWord.length)];
+	//document.getElementById("wordWrap").innerHTML = computerGuess;
+	//document.querySelector("#wordWrap").style.letterSpacing = 3px; 
+	//console.log("word appears!");
+//} 
 
  // When player hits key, load word 
 
