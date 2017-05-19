@@ -1,4 +1,4 @@
-#letters {
+#letters2 {
 	display: inline-block;
 	font-size: 2.0rem;
 	font-weight: 600;
@@ -19,4 +19,12 @@ footer {
 	border: 5px solid silver;
 	
 	padding: 50px;
+}
+
+.word {
+	letter-spacing: 3px;
+	border-bottom: 3px solid black;
+	display: inline-block;
+	
+
 }
