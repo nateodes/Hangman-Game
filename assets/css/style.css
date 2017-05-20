@@ -17,14 +17,60 @@ p {
 footer {
 	color: black;
 	border: 5px solid silver;
-	
+	position: absolute;
 	padding: 50px;
+	bottom: 0;
 }
 
 .word {
 	letter-spacing: 3px;
 	border-bottom: 3px solid black;
 	display: inline-block;
-	
+
 
 }
+
+.puzzleWord {
+	border-bottom: 3px solid black;
+	letter-spacing: 3px;
+	line-height: 2.0rem;
+	font-size: 2.0rem;
+	background-color: blue;
+	color: black;
+}
+
+.selected {
+	font-weight: bold;
+	font-size: 2.0rem;
+}
+
+.letter {
+    width: 30px;
+    height: 30px;
+    border-style: solid;
+    padding: 2px;
+    float: left;
+    margin: 2px;
+  }
+  .letter-button-color {
+    color: darkcyan;
+  }
+  .fridge-color {
+    color: orange;
+  }
+  #display {
+    margin-top: 78px;
+    height: 500px;
+    width: 220px;
+    margin-left: 60px;
+  }
+  #buttons {
+    padding-top: 60px;
+  }
+  #clear {
+    margin-left: 20px;
+    font-size: 25px;
+    color: black;
+    border-style: solid;
+    width: 100px;
+  }

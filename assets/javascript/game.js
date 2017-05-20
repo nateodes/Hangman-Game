@@ -1,5 +1,5 @@
 // Set Global Variables Here
-
+var alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 
 
 
@@ -14,35 +14,72 @@ var currentWord = [
 
 
 ]
-
+//$("#start").on("click", function() {
+// 	for (var i = 0; i < alphabet.length; i++) {
+//             var letterBtn = $("<button>");
+//               letterBtn.addClass("letter-button letter letter-button-color");
+//               letterBtn.attr({ "data-letter": alphabet[i] });
+//               letterBtn.html(alphabet[i]);
+//               $("#buttons").append(letterBtn);
+//           }
+// //}//)
 
 var computerGuess = currentWord[Math.floor(Math.random() * currentWord.length)];
 
 
 $("#start").on("click", function() {
 	//var computerGuess = currentWord[Math.floor(Math.random() * currentWord.length)];
-	var wordDiv = $("#word");
+	//var wordDiv = $("#word");
+	
 	//document.getElementById("word").style.visibility = "hidden";
 	for (var i = 0; i < computerGuess.length; i++) {
 
-
-      var newWordDiv = $("<div>" + " __ " + "</div>");
-      computerGuess[i] = " __ ";
+//Try creating a div class in css for borderBottom aka underline, then using .animate jquery to show letter if ===
+      //var newWordDiv = $("<div>" + " __ " + "</div>");
+      //computerGuess[i] = " __ ";
+      var newWordDiv = $("<div>");
+      newWordDiv.addClass("puzzleWord");
+      //newWordDiv.attr({ "data-letter": computerGuess[i] });
+      //newWordDiv.addClass("class" + computerGuess[i]);
+      $(".puzzleWord").animate({ opacity: "0" }, 1);
       $("#word").html(computerGuess);
-      
+      //$("#word").animate({ opacity: "0" }, 1);
+      //$(".puzzleWord").hide();
+      //$(computerGuess).hide();
+     //$(computerGuess[i]).animate({ opacity: "0" }, 1);
+     // $(computerGuess[i]).animate({ borderBottom: "3px solid" })
       //wordDiv.append(newWordDiv);
  }}
   )
+//$("#start").on("click", function() {
+	//$(".puzzleWord").animate({ opacity: "0" });
+
+//});
+// for (var i = 0; i < computerGuess.length; i++) {
+//             var letterBtn = $("<button>");
+//               letterBtn.addClass("letter-button letter letter-button-color");
+//               letterBtn.attr({ "data-letter": computerGuess[i] });
+//               letterBtn.html(computerGuess[i]);
+//               $("#buttons").append(letterBtn);
+//           }
+
+
+
 $("#lettera").on("click", function (){
 	console.log("you clicked A")
 	//var guess = computerGuess;
-	for (var i = computerGuess[0]; i < computerGuess.length; i++) {
+	for (var i = 0; i < computerGuess.length; i++) {
 			 
-			if (i === "A") {
-			
-				computerGuess[i] = "A";
-				$("#word").html("A");
-				console.log("you clicked A if");
+			if (computerGuess[i] === "A") {
+				//var selected = computerGuess[i];
+				//var x = $("<div>");
+				//var x = computerGuess[i];
+				//var i = $("<div>");
+				//i.addClass("select");
+				$(computerGuess[i]).animate({ opacity: "1" }, "fast");
+				//$("#word").html("A");
+				computerGuess[i].replace(computerGuess[i], "A");
+				console.log("show A");
 	}}
 		
 			
@@ -51,8 +88,14 @@ $("#lettera").on("click", function (){
 });
 
 
-
-
+// $(".letter-button").on("click", function() {
+// 	for (var i = 0; i < computerGuess.length; i++) {
+// 		if (computerGuess[i] === "A") {
+// 			$(computerGuess[i]).animate({ opacity: "1" }, "fast");
+// 			console.log("show letter");
+// 		}
+// 	}
+// })
 
 
 
@@ -133,10 +176,7 @@ $("#lettera").on("click", function (){
 //    			else {
 //    				var guessedDiv = $("<div>" + y + "</div>");
 
-//       // It then adds this new div to the drinkList div.
-//       wordDiv.append(guessedDiv);
-//       console.log("incorrect guess");
-//   };
+//       
 
 //    			var html = 
 //          	 "<p>wins: " + wins + "</p>" +
