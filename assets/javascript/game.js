@@ -14,6 +14,8 @@ var currentWord = [
 
 
 ]
+
+// var currentWord = ["DEATHSTAR", "SKYWALKER", "YODA"]
 //$("#start").on("click", function() {
 // 	for (var i = 0; i < alphabet.length; i++) {
 //             var letterBtn = $("<button>");
@@ -25,7 +27,7 @@ var currentWord = [
 // //}//)
 
 var computerGuess = currentWord[Math.floor(Math.random() * currentWord.length)];
-
+var answerArray = [];
 
 $("#start").on("click", function() {
 	//var computerGuess = currentWord[Math.floor(Math.random() * currentWord.length)];
@@ -36,13 +38,14 @@ $("#start").on("click", function() {
 
 //Try creating a div class in css for borderBottom aka underline, then using .animate jquery to show letter if ===
       //var newWordDiv = $("<div>" + " __ " + "</div>");
-      //computerGuess[i] = " __ ";
-      var newWordDiv = $("<div>");
-      newWordDiv.addClass("puzzleWord");
+      answerArray[i] = " __ ";
+      //var newWordDiv = $("<div>");
+      //newWordDiv.addClass("puzzleWord");
       //newWordDiv.attr({ "data-letter": computerGuess[i] });
       //newWordDiv.addClass("class" + computerGuess[i]);
-      $(".puzzleWord").animate({ opacity: "0" }, 1);
-      $("#word").html(computerGuess);
+      //$(".puzzleWord").animate({ opacity: "0" }, 1);
+      $("#word").html(answerArray);
+
       //$("#word").animate({ opacity: "0" }, 1);
       //$(".puzzleWord").hide();
       //$(computerGuess).hide();
@@ -65,23 +68,30 @@ $("#start").on("click", function() {
 
 
 
+
 $("#lettera").on("click", function (){
 	console.log("you clicked A")
-	//var guess = computerGuess;
+	
 	for (var i = 0; i < computerGuess.length; i++) {
-			 
+			 	
 			if (computerGuess[i] === "A") {
 				//var selected = computerGuess[i];
 				//var x = $("<div>");
 				//var x = computerGuess[i];
 				//var i = $("<div>");
 				//i.addClass("select");
-				$(computerGuess[i]).animate({ opacity: "1" }, "fast");
+				//$(computerGuess[i]).animate({ opacity: "1" }, "fast");
+				answerArray[i] = "A";
+				computerGuess[i] = "A" + "";
 				//$("#word").html("A");
-				computerGuess[i].replace(computerGuess[i], "A");
+				answerArray[i] = true;
+				answerArray[i] = "A" + "";
+				answerArray[i].replace(" __ " , "A");
+				//$(computerGuess[i]).animate({ opacity: "1" }, "fast");
+				//computerGuess[i].replace(computerGuess[i], "A");
 				console.log("show A");
+				$(computerGuess[i]).show("A");
 	}}
-		
 			
 		
 	
