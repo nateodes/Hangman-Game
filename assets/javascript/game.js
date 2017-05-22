@@ -4,7 +4,7 @@ var guessed = 0;
 
  
 
-
+// create the wordbank here
 var currentWord = [
 ["D", "E", "A", "T", "H", "S", "T", "A", "R"],
 ["C", "H", "E", "W", "B", "A", "C", "C", "A"],
@@ -12,11 +12,13 @@ var currentWord = [
 ["E", "W", "O", "K"],
 ["J", "E", "D", "I"],
 ["Y", "O", "D", "A"],
+["R", "E", "B", "E", "L", "S"],
+["R", "E", "P", "U", "B", "L", "I", "C"],
 
 
 ]
 
-
+// create letter buttons like fridge excercise 
 for (var i = 0; i < alphabet.length; i++) {
             var letterBtn = $("<button>");
               letterBtn.addClass("letter-button letter letter-button-color");
@@ -24,25 +26,17 @@ for (var i = 0; i < alphabet.length; i++) {
               letterBtn.html(alphabet[i]);
               $("#buttons").append(letterBtn);
           }
-// var currentWord = ["DEATHSTAR", "SKYWALKER", "YODA"]
-//$("#start").on("click", function() {
-// 	for (var i = 0; i < alphabet.length; i++) {
-//             var letterBtn = $("<button>");
-//               letterBtn.addClass("letter-button letter letter-button-color");
-//               letterBtn.attr({ "data-letter": alphabet[i] });
-//               letterBtn.html(alphabet[i]);
-//               $("#buttons").append(letterBtn);
-//           }
-// //}//)
 
+// create random word, use example from rps 
 var computerGuess = currentWord[Math.floor(Math.random() * currentWord.length)];
 var answerArray = [];
 
+// restart button
 $("#restart").on("click", function () {
 		guessed = 0;
 		$("#chances").html(guessed)
-		var computerGuess = currentWord[Math.floor(Math.random() * currentWord.length)];
-		var answerArray = [];
+		 var computerGuess = currentWord[Math.floor(Math.random() * currentWord.length)];
+		 var answerArray = [];
 	for (var i = 0; i < computerGuess.length; i++) {
 		answerArray[i] = " __ ";
 		$("#word").html(computerGuess);
@@ -53,45 +47,24 @@ $("#restart").on("click", function () {
 
 });
 
+//Start button function, create "blanks" for computerGuess
+
 $("#start").on("click", function() {
-	//var computerGuess = currentWord[Math.floor(Math.random() * currentWord.length)];
-	//var wordDiv = $("#word");
 	
-	//document.getElementById("word").style.visibility = "hidden";
 	for (var i = 0; i < computerGuess.length; i++) {
 
-//Try creating a div class in css for borderBottom aka underline, then using .animate jquery to show letter if ===
-      //var newWordDiv = $("<div>" + " __ " + "</div>");
+
       
       answerArray[i] = " __ ";
-      //var newWordDiv = $("<div>");
-      //newWordDiv.addClass("puzzleWord");
-      //newWordDiv.attr({ "data-letter": computerGuess[i] });
-      //newWordDiv.addClass("class" + computerGuess[i]);
-      //$(".puzzleWord").animate({ opacity: "0" }, 1);
+      
       $("#word").html(computerGuess);
-      //$("#word").animate({ opacity: "0" }, 1);
+      
       $("#word").html(answerArray);
-      //$("#word").placeholder(" __ ");
-      //$("#word").animate({ opacity: "0" }, 1);
-      //$(".puzzleWord").hide();
-      //$(computerGuess).hide();
-     //$(computerGuess[i]).animate({ opacity: "0" }, 1);
-     // $(computerGuess[i]).animate({ borderBottom: "3px solid" })
-      //wordDiv.append(newWordDiv);
+      
  }}
   );
-//$("#start").on("click", function() {
-	//$(".puzzleWord").animate({ opacity: "0" });
 
-//});
-// for (var i = 0; i < computerGuess.length; i++) {
-//             var letterBtn = $("<button>");
-//               letterBtn.addClass("letter-button letter letter-button-color");
-//               letterBtn.attr({ "data-letter": computerGuess[i] });
-//               letterBtn.html(computerGuess[i]);
-//               $("#buttons").append(letterBtn);
-//           }
+//Get value from button, using this.value from calc excercise and check against computerGuess
 
 $(".letter-button").on("click", function() {
 	console.log("letter clicked")
@@ -99,7 +72,7 @@ $(".letter-button").on("click", function() {
 	letter = ($(this).attr("data-letter"));
 	guessed++
 	$("#chances").html(guessed)
-
+	// $("#ltr-guess").html(append(letter));
 	for (var i = 0; i < computerGuess.length; i++) {
 		if (computerGuess[i].includes(letter)) {
 			answerArray[i] = letter;
