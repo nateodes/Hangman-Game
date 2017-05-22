@@ -8,19 +8,33 @@
 
   	Optional theme 
   	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
+	<link href="https://fonts.googleapis.com/css?family=Poller+One" rel="stylesheet">
   	<link rel= "stylesheet" type= "text/css" href="assets/css/style.css" > 
 
   	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
   </head>
 
   <body>
-  		<h1> Star Wars Hangman </h1>
+  	<div class= "container-fluid">
+	  		<h1 class= "jumbotron"> Star Wars Hangman </h1>
 
-  		<button id= "start"> Start</button>
-
-  		<div id= "word"> P U Z Z L E</div>
-		<div id= "buttons"> </div>
+	  		
+		<div class= "row col-lg-7 col-md-7 col-sm-9 col-xs-12">
+	  		<div id= "word"> P U Z Z L E</div>
+	  		<div class= "outcome vader"> </div>
+	  		<div id= "chances" class= "col-lg-3 col-md-3 col-sm-6 col-xs-6"> </div>
+	  	</div>
+		<div class= "col-lg-4 col-md-4 col-sm-6 col-xs-9">
+			<div class= "row">
+					<button id= "start" class= "btn btn-danger btn-lg"> Start</button>
+					<button id= "restart" class= "btn btn-warning btn-sm"> Restart </button>
+					<div id= "buttons" class= "lttr"> </div>
+					
+				<div class= "col-lg-4 col-md-4 col-sm-6 col-xs-9"> </div>
+						
+				</div>
+			</div>
+		</div>
   		<script type= "text/javascript" src="assets/javascript/game.js"> </script>
 	</div>
 

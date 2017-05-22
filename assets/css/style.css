@@ -1,47 +1,64 @@
-* {
-    box-sizing: border-box;
-}
 body {
-    font-family: sans-serif;
-}
-/* Keep it simple - improvement would be to not display characters */
- .letter {
-    display: inline-block;
-    list-style: none;
-    width: 20px;
-    margin: 0 5px;
-    border-bottom: 1px solid black;
-    text-align: center;
-    color: white;
-}
-.current-word {
-    list-style: none;
-}
-.output {
-    opacity: 0;
-    transition: opacity 1s ease;
-}
-.correct {
-    background-color: green;
-    transition: all 1s ease;
-}
-.error {
-    color: red;
-    opacity: 1;
-}
-.warning {
-    color: orange;
-    opacity: 1;
-}
-.win {
-    color: green;
-    opacity: 1;
+	background-color:  black;
+	font-family: 'Poller One', cursive;
 }
 
+.letter {
+	padding: 15px;
+	margin: 10;
+	background-color: white;
+	font-color: gold;
+}
 
+#word {
+	background-color: white;
+	display: inline-block;
+	margin: 15px;
+	font-size: 2.0rem;
+	border: 5px;
+}
 
+#chances {
+	padding: 5px;
+	background-color: grey;
+	font-color: white;
+}
+/*.vader {
+	background-image: url("https://img.clipartfest.com/3d0f5a64c209e122d558edc5a799ecdd_1000-images-about-save-the-darth-vader-clipart-outline_600-631.jpeg");
+	background-image: url("../images/vaderPic.JPG");
+	background-repeat: no-repeat;
+	height: 100px;
+	width: 100px;
+	padding: 20px;
+	
+}*/
 
+@media screen {
+	max-width: 960px; 
+	body {
+			background-color: #333;
+		}
+}
 
+@media screen {
+	max-width: 768px;
+		body {
+			background-color: #333;
+		}
+	
+}
+
+@media screen {
+	max-width: 640px;
+	body {
+			background-color: #333;
+		}
+}
+@media screen and (max-width: 768px) {
+  /* The body's bg color will be #333 */
+  body {
+    background-color: #333;
+  }
 /*#letters2 {
 	display: inline-block;
 	font-size: 2.0rem;

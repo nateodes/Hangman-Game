@@ -1,5 +1,6 @@
 // Set Global Variables Here
 var alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+var guessed = 0;
 
  
 
@@ -14,6 +15,7 @@ var currentWord = [
 
 
 ]
+
 
 for (var i = 0; i < alphabet.length; i++) {
             var letterBtn = $("<button>");
@@ -35,6 +37,21 @@ for (var i = 0; i < alphabet.length; i++) {
 
 var computerGuess = currentWord[Math.floor(Math.random() * currentWord.length)];
 var answerArray = [];
+
+$("#restart").on("click", function () {
+		guessed = 0;
+		$("#chances").html(guessed)
+		var computerGuess = currentWord[Math.floor(Math.random() * currentWord.length)];
+		var answerArray = [];
+	for (var i = 0; i < computerGuess.length; i++) {
+		answerArray[i] = " __ ";
+		$("#word").html(computerGuess);
+      	
+      	$("#word").html(answerArray);
+      	console.log("restarted");
+	}
+
+});
 
 $("#start").on("click", function() {
 	//var computerGuess = currentWord[Math.floor(Math.random() * currentWord.length)];
@@ -80,15 +97,34 @@ $(".letter-button").on("click", function() {
 	console.log("letter clicked")
 	var letter = "";
 	letter = ($(this).attr("data-letter"));
-	
-	
+	guessed++
+	$("#chances").html(guessed)
 
 	for (var i = 0; i < computerGuess.length; i++) {
 		if (computerGuess[i].includes(letter)) {
 			answerArray[i] = letter;
 			console.log("there is this letter")
 			$("#word").html(answerArray);
-		}}});
+			
+			
+		}
+		else if (guessed > 7) {
+			console.log("you lose")
+			//add a message to display GAME OVER
+			// var audioElement = document.createElement("audio");
+			// audioElement.setAttribute("src", "..Hangman-Game/images/music.MP3");
+			// audioElement.play();
+			alert("your JediKnight has been slain")
+			// var picLost = $("<div>");
+			// picLost.addClass("vader");
+			// $(".outcome").html(picLost);
+			console.log("show vader");
+			break;
+		}	
+
+		}});
+
+
 
 
 
